@@ -52,6 +52,8 @@
    2. [Donate](#donate)
 6. [LICENSE](#license)
 
+<a href="https://twitter.com/intent/tweet?url=https://github.com/Lateralus138/unishellectv2%0D%0A&text=%27UniShellect%20V2%27%20-%20Load%20a%20menu%20of%20shells%2Ffiles%20from%20a%20provided%20JSON%20configuration%20file%20via%20%40thefluxapex%0A&name=medium&hashtags=Windows,Linux,Android,commandline" target="_blank">![Twitter URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.github.com%2FLateralus138%unishellectv2&label=Tweet%20This%20Project)</a>
+
 ---
 
 ## About
