@@ -1,0 +1,184 @@
+name: Build UniShellect V2
+on:
+  push:
+    paths:
+      - '**.cpp'
+      - '**.h'
+      - '**.o'
+      - '**.sln'
+      - 'makefile'
+      - '**.yml'
+      - '*.yml'
+      - '**.sh'
+      - '**.ps1'
+env:
+  VS_PROGRAM: 2
+  VS_FILE: 0
+  VS_EPOCH: 1661201987
+  VS_FULL:
+  RELEASE_TITLE: "Stable Release"
+  RELEASE_FILE: "./docs/md/release.md"
+  PRERELEASE: False
+jobs:
+  build_linux:
+    name: Build Linux Project
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        rootpath="$(realpath .)"
+        if  scripts/buildlinux.sh; then
+            scripts/builddebian.sh    || exit $?
+            scripts/buildandroid.sh   || exit $?
+            scripts/buildappimage.sh  || exit $?
+        else
+          exit $?
+        fi
+        cd "${rootpath}"
+        unishellect_linux_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "unishellect MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "linux"\n}'
+        if ! [[ -d "${rootpath}/docs/json" ]]; then
+          mkdir -p "${rootpath}/docs/json"
+        fi
+        if ! [[ -f "${rootpath}/docs/json/unishellect_linux_md5.json" ]]; then
+          touch "${rootpath}/docs/json/unishellect_linux_md5.json"
+        fi
+        echo -e "$unishellect_linux_md5_text" > "${rootpath}/docs/json/unishellect_linux_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/build/linux/dynamic/64/unishellect | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/unishellect_linux_md5.json"
+        unishellect_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "unishellect-2.0.1661201987.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
+        if ! [[ -d "${rootpath}/docs/json" ]]; then
+          mkdir -p "${rootpath}/docs/json"
+        fi
+        if ! [[ -f "${rootpath}/docs/json/unishellect_debian_md5.json" ]]; then
+          touch "${rootpath}/docs/json/unishellect_debian_md5.json"
+        fi
+        echo -e "$unishellect_debian_md5_text" > "${rootpath}/docs/json/unishellect_debian_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/build/debian/64/unishellect-2.0.1661201987.deb | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/unishellect_debian_md5.json"
+        unishellect_android_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "unishellect.aarch64 MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "android"\n}'
+        if ! [[ -d "${rootpath}/docs/json" ]]; then
+          mkdir -p "${rootpath}/docs/json"
+        fi
+        if ! [[ -f "${rootpath}/docs/json/unishellect_android_md5.json" ]]; then
+          touch "${rootpath}/docs/json/unishellect_android_md5.json"
+        fi
+        echo -e "$unishellect_android_md5_text" > "${rootpath}/docs/json/unishellect_android_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/build/android/static/64/unishellect.aarch64 | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/unishellect_android_md5.json"
+        unishellect_appimage_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "UniShellect-x86_64.AppImage MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "appimage"\n}'
+        if ! [[ -d "${rootpath}/docs/json" ]]; then
+          mkdir -p "${rootpath}/docs/json"
+        fi
+        if ! [[ -f "${rootpath}/docs/json/unishellect_appimage_md5.json" ]]; then
+          touch "${rootpath}/docs/json/unishellect_appimage_md5.json"
+        fi
+        echo -e "$unishellect_appimage_md5_text" > "${rootpath}/docs/json/unishellect_appimage_md5.json"
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ${rootpath}/build/appimage/64/UniShellect-x86_64.AppImage  | cut -d' ' -f 1)\"/g" "${rootpath}/docs/json/unishellect_appimage_md5.json"
+        echo "VS_FULL=${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.${{ env.VS_EPOCH }}" >> $GITHUB_ENV
+        git add docs/json/*
+        git config --global user.name 'Lateralus138'
+        git config --global user.email 'Lateralus138@users.noreply.github.com'
+        git commit --allow-empty -am "Pushed $(printf '%s ' /docs/json/*) to master. - $(date -u)"
+        git push --force origin master
+      name: Make Linux
+      id: make_linux
+    - uses: ncipollo/release-action@v1
+      if: steps.make_linux.conclusion == 'success'
+      with:
+        allowUpdates: True
+        tag: ${{ env.VS_FULL }}
+        name: ${{ env.RELEASE_TITLE }} - v${{ env.VS_FULL }}
+        bodyFile: ${{ env.RELEASE_FILE }}
+        prerelease: ${{ env.PRERELEASE }}
+        artifacts: build/linux/dynamic/64/unishellect,build/android/static/64/unishellect.aarch64,build/debian/64/unishellect-2.0.1661201987.deb,build/appimage/64/UniShellect-x86_64.AppImage
+        token: ${{ secrets.GITHUB_TOKEN }}
+  build_windows:
+    name: Build Windows Project
+    runs-on: windows-latest
+    needs: [ build_linux ]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: microsoft/setup-msbuild@v1.0.2
+    - run: |
+        cd scripts
+        ./buildwindows.ps1
+        cd ../
+        echo "VS_FULL=${{ env.VS_PROGRAM }}.${{ env.VS_FILE }}.${{ env.VS_EPOCH }}" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+        $unishellect_x86_md5_text = @'
+        {
+          "schemaVersion": 1,
+          "color": "2E9778",
+          "label": "unishellect-x86.exe MD5",
+          "message": "PLACEHOLDER",
+          "labelColor": "1d1d1d",
+          "style": "for-the-badge",
+          "namedLogo": "windows"
+        }
+        '@
+        New-Item -ItemType Directory -Force -Path '.\docs\json'
+        Write-Output "$unishellect_x86_md5_text" > .\docs\json\unishellect_x86_md5.json
+        $file = ".\docs\json\unishellect_x86_md5.json"
+        $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+        $hash = [System.BitConverter]::ToString($md5.ComputeHash([System.IO.File]::ReadAllBytes("build\windows\x86\unishellect-x86.exe")))
+        ((Get-Content -path $file -Raw) -replace 'PLACEHOLDER',$hash) | Set-Content -Path "$file"
+        $unishellect_x64_md5_text = @'
+        {
+          "schemaVersion": 1,
+          "color": "2E9778",
+          "label": "unishellect-x64.exe MD5",
+          "message": "PLACEHOLDER",
+          "labelColor": "1d1d1d",
+          "style": "for-the-badge",
+          "namedLogo": "windows"
+        }
+        '@
+        Write-Output "$unishellect_x64_md5_text" > .\docs\json\unishellect_x64_md5.json
+        $file = ".\docs\json\unishellect_x64_md5.json"
+        $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+        $hash = [System.BitConverter]::ToString($md5.ComputeHash([System.IO.File]::ReadAllBytes("build\windows\x64\unishellect-x64.exe")))
+        ((Get-Content -path $file -Raw) -replace 'PLACEHOLDER',$hash) | Set-Content -Path "$file"
+        git pull
+        git add .\docs\json\*
+        git config --global user.name 'Lateralus138'
+        git config --global user.email 'Lateralus138@users.noreply.github.com'
+        git commit --allow-empty -am "Pushed .\docs\json\* to master. - $(date -u)"
+        git push --force origin master
+      name: Make Windows
+      id: make_windows
+    - uses: ncipollo/release-action@v1
+      if: steps.make_windows.conclusion == 'success'
+      with:
+        allowUpdates: True
+        tag: ${{ env.VS_FULL }}
+        name: ${{ env.RELEASE_TITLE }} - v${{ env.VS_FULL }}
+        bodyFile: ${{ env.RELEASE_FILE }}
+        prerelease: ${{ env.PRERELEASE }}
+        artifacts: build\windows\x86\unishellect-x86.exe,build\windows\x64\unishellect-x64.exe
+        token: ${{ secrets.GITHUB_TOKEN }}
+# Possibly add MacOS version in the future
+# build_macos:
+#   name: Build MacOS Project
+#   runs-on: macos-latest
+#   needs: [ build_windows ]
+#   steps:
+#   - uses: actions/checkout@v2
+#   - run: |
+#       cd linux
+#       for file in src/include/*.cpp; do
+#         nfile=${file/include/lib}
+#         nfile=${nfile//\.cpp/\.o}
+#         g++ -Isrc/include -O3 -std=gnu++17 -c "$file" -o $nfile
+#       done
+#       ar rcs src/lib/libunishellect.a src/lib/*.o
+#       g++ -Isrc/include -O3 -std=gnu++17 src/unishellect.cpp -o unishellect -Lsrc/lib -lunishellect
+#       mv unishellect unishellect.macos
+#     name: Make MacOS
+#     id: make_macos
+
+#   - uses: ncipollo/release-action@v1
+#     if: steps.make_macos.conclusion == 'success'
+#     with:
+#       allowUpdates: True
+#       tag: 2.0.1661201987
+#       name: Stable Pre-Release - 2.0.1661201987
+#       bodyFile: ./docs/md/release.md
+#       prerelease: True
+#       artifacts: linux/unishellect.macos
+#       token: ${{ secrets.GITHUB_TOKEN }}

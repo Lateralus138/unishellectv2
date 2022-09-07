@@ -1,0 +1,16 @@
+Source: unishellect
+Package: unishellect
+Section: utils
+Priority: optional
+Maintainer: Ian Pride <faithnomoread@yahoo.com>
+Homepage: https://github.com/Lateralus138/unishellectv2
+Version: 2.0.1661201987
+Installed-Size: 316
+Architecture: amd64
+Depends: libc6
+Description: Load a menu of shells/files from a provided JSON configuration file
+ The default configuration file is located in:
+ \$HOME/.config/UniShellect/unishellect.json
+ in Linux and:
+ %USERPROFILE%\\.config\\UniShellect\\unishellect.json
+ in Windows.

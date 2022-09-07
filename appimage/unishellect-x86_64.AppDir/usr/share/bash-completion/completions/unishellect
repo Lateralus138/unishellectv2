@@ -1,0 +1,7 @@
+unishellect_list=(
+  -h --help
+  -c --config
+  -m --monochrome
+)
+complete -W "$(printf '%s\n' "${unishellect_list[@]}")" unishellect
+

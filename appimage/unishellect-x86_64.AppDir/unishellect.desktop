@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=UniShellect
+GenericName=unishellect application
+Comment=Load files/applications with arguments from a JSON file
+Exec=unishellect
+Terminal=false
+Type=Application
+Icon=unishellect
+Categories=GNOME;GTK;Utility;
