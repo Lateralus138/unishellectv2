@@ -50,7 +50,11 @@
 5. [Contribute](#contribute)
    1. [Project](#project)
    2. [Donate](#donate)
-6. [LICENSE](#license)
+6. [Build Status And Project Information](#build-status-and-project-information)
+   1. [Build Information](#build-information)
+   2. [CodeFactor](#codefactor)
+   3. [Attributions](#attributions)
+7. [LICENSE](#license)
 
 <a href="https://twitter.com/intent/tweet?url=https://github.com/Lateralus138/unishellectv2%0D%0A&text=%27UniShellect%20V2%27%20-%20Load%20a%20menu%20of%20shells%2Ffiles%20from%20a%20provided%20JSON%20configuration%20file%20via%20%40thefluxapex%0A&name=medium&hashtags=Windows,Linux,Android,commandline" target="_blank">![Twitter URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.github.com%2FLateralus138%unishellectv2&label=Tweet%20This%20Project)</a>
 
@@ -438,6 +442,29 @@ Exiting UniShellect
 &#x4F;&#x72;&#x20;***Buy Me A Coffee***&#x20;&#x69;&#x66;&#x20;&#x79;&#x6F;&#x75;&#x72;&#x20;&#x70;&#x72;&#x65;&#x66;&#x65;&#x72;&colon;
 
 [![Buy Me A Coffee](./docs/media/misc/buymeacoffe_a.png)](https://www.buymeacoffee.com/ianalanpride)
+
+---
+
+## Build Status And Project Information
+
+### Build Information
+
+![Last Workflow Build](https://img.shields.io/github/workflow/status/Lateralus138/unishellectv2/Build%20UniShellect%20V2?style=for-the-badge&labelColor=1D1D1D)
+
+<!-- TODO Finish build info section-->
+
+### CodeFactor
+
+&#x54;&#x68;&#x69;&#x73;&#x20;&#x73;&#x63;&#x6F;&#x72;&#x65;&#x20;&#x69;&#x73;&#x20;&#x77;&#x69;&#x74;&#x68;&#x20;&#x74;&#x68;&#x65;&#x20;&#x65;&#x78;&#x63;&#x65;&#x70;&#x74;&#x69;&#x6F;&#x6E;&#x20;&#x6F;&#x66;&#x20;&#x74;&#x68;&#x65;&#x20;*&#x6A;&#x73;&#x6F;&#x6E;&period;&#x68;*&#x20;&#x6C;&#x69;&#x62;&#x72;&#x61;&#x72;&#x79;&#x20;&#x77;&#x68;&#x69;&#x63;&#x68;&#x20;&#x69;&#x73;&#x20;&#x6E;&#x6F;&#x74;&#x20;&#x6D;&#x69;&#x6E;&#x65;&period;&#x20;&#x49;&#x74;&apos;&#x73;&#x20;&#x6C;&#x61;&#x72;&#x67;&#x65;&#x20;&#x61;&#x6E;&#x64;&#x20;&#x63;&#x6F;&#x75;&#x6C;&#x64;&#x20;&#x62;&#x65;&#x20;&#x64;&#x6F;&#x6E;&#x65;&#x20;&#x64;&#x69;&#x66;&#x66;&#x65;&#x72;&#x65;&#x6E;&#x74;&#x6C;&#x79;&comma;&#x20;&#x62;&#x75;&#x74;&#x20;&#x69;&#x74;&apos;&#x73;&#x20;&#x73;&#x74;&#x69;&#x6C;&#x6C;&#x20;&#x61;&#x20;&#x67;&#x72;&#x65;&#x61;&#x74;&#x20;&#x6C;&#x69;&#x62;&#x72;&#x61;&#x72;&#x79;&#x20;&#x61;&#x6E;&#x64;&#x20;&#x49;&#x20;&#x61;&#x70;&#x70;&#x72;&#x65;&#x63;&#x69;&#x61;&#x74;&#x65;&#x20;&#x69;&#x74;&#x20;&#x61;&#x6E;&#x64;&#x20;&#x77;&#x69;&#x6C;&#x6C;&#x20;&#x73;&#x74;&#x69;&#x6C;&#x6C;&#x20;&#x75;&#x73;&#x65;&#x20;&#x69;&#x74;&period;&#x20;&#x49;&#x20;&#x65;&#x78;&#x63;&#x6C;&#x75;&#x64;&#x65;&#x64;&#x20;&#x69;&#x74;&#x20;&#x66;&#x72;&#x6F;&#x6D;&#x20;&#x74;&#x68;&#x65;&#x20;&#x67;&#x72;&#x61;&#x64;&#x65;&#x20;&#x70;&#x61;&#x72;&#x73;&#x69;&#x6E;&#x67;&#x20;&#x61;&#x73;&#x20;&#x69;&#x74;&#x20;&#x69;&#x73;&#x20;&#x6E;&#x6F;&#x74;&#x20;&#x6D;&#x79;&#x20;&#x77;&#x6F;&#x72;&#x6B;&#x20;&#x61;&#x6E;&#x79;&#x77;&#x61;&#x79;&#x20;&#x73;&#x6F;&#x20;&#x49;&#x20;&#x64;&#x6F;&#x6E;&apos;&#x74;&#x20;&#x66;&#x65;&#x65;&#x6C;&#x20;&#x69;&#x74;&#x20;&#x72;&#x65;&#x66;&#x6C;&#x65;&#x63;&#x74;&#x73;&#x20;&#x6D;&#x79;&#x20;&#x61;&#x63;&#x74;&#x75;&#x61;&#x6C;&#x20;&#x77;&#x6F;&#x72;&#x6B;&period;&#x20;&#x54;&#x68;&#x65;&#x20;&#x67;&#x72;&#x61;&#x64;&#x65;&#x20;&#x68;&#x65;&#x72;&#x65;&#x20;&#x72;&#x65;&#x66;&#x6C;&#x65;&#x63;&#x74;&#x73;&#x20;&#x6F;&#x6E;&#x6C;&#x79;&#x20;&#x63;&#x6F;&#x64;&#x65;&#x20;&#x74;&#x68;&#x61;&#x74;&#x20;&#x49;&#x20;&#x68;&#x61;&#x76;&#x65;&#x20;&#x70;&#x65;&#x72;&#x73;&#x6F;&#x6E;&#x61;&#x6C;&#x6C;&#x79;&#x20;&#x77;&#x72;&#x69;&#x74;&#x74;&#x65;&#x6E;&period;
+
+![colorstatic Code](https://img.shields.io/codefactor/grade/github/Lateralus138/unishellectv2/master?style=for-the-badge&labelColor=1D1D1D&color=ffff99)
+
+
+### Attributions
+
+&#x49;&#x20;&#x74;&#x65;&#x6E;&#x64;&#x20;&#x74;&#x6F;&#x20;&#x77;&#x72;&#x69;&#x74;&#x65;&#x20;&#x74;&#x68;&#x65;&#x20;&#x6C;&#x61;&#x72;&#x67;&#x65;&#x20;&#x6D;&#x61;&#x6A;&#x6F;&#x72;&#x69;&#x74;&#x79;&#x20;&#x6F;&#x66;&#x20;&#x6D;&#x79;&#x20;&#x6F;&#x77;&#x6E;&#x20;&#x63;&#x6F;&#x64;&#x65;&#x20;&#x6C;&#x69;&#x62;&#x72;&#x61;&#x72;&#x69;&#x65;&#x73;&comma;&#x20;&#x62;&#x75;&#x74;&#x20;&#x77;&#x69;&#x74;&#x68;&#x20;&#x74;&#x68;&#x69;&#x73;&#x20;&#x70;&#x72;&#x6F;&#x6A;&#x65;&#x63;&#x74;&#x20;&#x49;&#x20;&#x75;&#x73;&#x65;&#x64;&#x20;&#x61;&#x20;&#x77;&#x65;&#x6C;&#x6C;&#x20;&#x6B;&#x6E;&#x6F;&#x77;&#x6E;&#x20;*&#x4A;&#x53;&#x4F;&#x4E;*&#x20;&#x43;&plus;&plus;&#x20;&#x6C;&#x69;&#x62;&#x72;&#x61;&#x72;&#x79;&#x20;&#x66;&#x6F;&#x72;&#x20;&#x77;&#x68;&#x69;&#x63;&#x68;&#x20;&#x49;&#x20;&#x61;&#x6D;&#x20;&#x67;&#x72;&#x61;&#x74;&#x65;&#x66;&#x75;&#x6C;&period;
+
+&#x43;&#x72;&#x65;&#x64;&#x69;&#x74;&#x20;&#x67;&#x6F;&#x65;&#x73;&#x20;&#x74;&#x6F;&#x20;[nlohmann/json @ GitHub](https://github.com/nlohmann/json)
 
 ---
 
