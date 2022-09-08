@@ -457,9 +457,9 @@ Exiting UniShellect
 
 |Name|Status|
 |:---|:---|
-|Latest Release|![Release Version](https://img.shields.io/github/v/release/Lateralus138/unishellectv2?style=for-the-badge)|
-|Latest Downloads|![This Version Total Downloads](https://img.shields.io/github/downloads/Lateralus138/unishellectv2/2.0.1661201987/total?style=for-the-badge)|
-|Total Downloads|![Total Downloads](https://img.shields.io/github/downloads/Lateralus138/unishellectv2/total?style=for-the-badge)|
+|Latest Release|![Release Version](https://img.shields.io/github/v/release/Lateralus138/unishellectv2?style=for-the-badge&labelColor=1D1D1D&color=ffff99)|
+|Latest Downloads|![This Version Total Downloads](https://img.shields.io/github/downloads/Lateralus138/unishellectv2/2.0.1661201987/total?style=for-the-badge&labelColor=1D1D1D&color=ffff99)|
+|Total Downloads|![Total Downloads](https://img.shields.io/github/downloads/Lateralus138/unishellectv2/total?style=for-the-badge&labelColor=1D1D1D&color=ffff99)|
 
 ### CodeFactor
 
