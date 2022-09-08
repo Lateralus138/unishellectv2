@@ -52,8 +52,9 @@
    2. [Donate](#donate)
 6. [Build Status And Project Information](#build-status-and-project-information)
    1. [Build Information](#build-information)
-   2. [CodeFactor](#codefactor)
-   3. [Attributions](#attributions)
+   2. [Version Status](#version-status)
+   3. [CodeFactor](#codefactor)
+   4. [Attributions](#attributions)
 7. [LICENSE](#license)
 
 <a href="https://twitter.com/intent/tweet?url=https://github.com/Lateralus138/unishellectv2%0D%0A&text=%27UniShellect%20V2%27%20-%20Load%20a%20menu%20of%20shells%2Ffiles%20from%20a%20provided%20JSON%20configuration%20file%20via%20%40thefluxapex%0A&name=medium&hashtags=Windows,Linux,Android,commandline" target="_blank">![Twitter URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Fwww.github.com%2FLateralus138%unishellectv2&label=Tweet%20This%20Project)</a>
@@ -451,7 +452,14 @@ Exiting UniShellect
 
 ![Last Workflow Build](https://img.shields.io/github/workflow/status/Lateralus138/unishellectv2/Build%20UniShellect%20V2?style=for-the-badge&labelColor=1D1D1D)
 
-<!-- TODO Finish build info section-->
+### Version Status
+
+
+|Name|Status|
+|:---|:---|
+|Latest Release|![Release Version](https://img.shields.io/github/v/release/Lateralus138/unishellectv2?style=for-the-badge)|
+|Latest Downloads|![This Version Total Downloads](https://img.shields.io/github/downloads/Lateralus138/unishellectv2/2.0.1661201987/total?style=for-the-badge)|
+|Total Downloads|![Total Downloads](https://img.shields.io/github/downloads/Lateralus138/unishellectv2/total?style=for-the-badge)|
 
 ### CodeFactor
 
